@@ -336,7 +336,7 @@
                     WHERE 1
                         AND MATCH (`summary`)
                             AGAINST (? IN BOOLEAN MODE)
-                        AND modified < ?
+                        AND (modified < ? OR resolution <> '')
                     ORDER BY relevance DESC
                     LIMIT 0,?",
             "host": "read_host"
